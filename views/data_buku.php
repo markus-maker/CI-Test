@@ -23,10 +23,10 @@
 foreach ($data_buku as $value) {
 	echo "<tr>";	
 	echo "<td>".$no++."</td>";
-	echo "<td>".$value->judul_buku."</td>";
-	echo "<td>".$value->nama_pengarang."</td>";
-	echo "<td>".$value->nama_penerbit."</td>";
-	echo "<td>".$value->tahun_terbit."</td>";
+	echo "<td>".$value->judul_buku."</td>";//pemanggil di db praktikum-ci dan tabel buku
+	echo "<td>".$value->nama_pengarang."</td>";//pemanggil di db praktikum-ci dan tabel buku
+	echo "<td>".$value->nama_penerbit."</td>";//pemanggil di db praktikum-ci dan tabel buku
+	echo "<td>".$value->tahun_terbit."</td>";//pemanggil di db praktikum-ci dan tabel buku
 	echo "</tr>";
 	}
 	 ?>

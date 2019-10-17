@@ -10,6 +10,14 @@
 </head>
 <body>
 	<h1>Detail Buku</h1>
+	<table>
+		<tr>
+		<td>id</td>
+		<td>judul_buku</td>
+		<td>nama_pengarang</td>
+		<td>nama_penerbit</td>
+		<td>tahun_terbit</td>
+		</tr>
 	<?php
 if (isset($data_tugas)) {	
 	echo $data_tugas['id'];//pemanggil di db praktikum-ci dan tabel buku
@@ -19,5 +27,6 @@ if (isset($data_tugas)) {
 	echo $data_tugas['tahun_terbit'];//pemanggil di db praktikum-ci dan tabel buku
 	}
 	 ?>
+	 </table>
 </body>
 </html>

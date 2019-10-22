@@ -25,17 +25,20 @@ class Pelanggan extends CI_Controller {
 		$this->load->helper('url');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_pelanggan', 'Nama', 'required');
+		$this->form_validation->set_rules('id_pelanggan', 'Id', 'required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 
 		if($this->form_validation->run()  != FALSE) {
 
 		$nama_pelanggan=$this->input->post('nama_pelanggan');
+		$id_pelanggan=$this->input->post('id_pelanggan');
 		$alamat=$this->input->post('alamat');
 		$no_hp=$this->input->post('no_hp');
 
 
 		$data=array(
 			'nama_pelanggan'=>$nama_pelanggan,
+			'id_pelanggan'=>$id_pelanggan,
 			'alamat'=>$alamat,
 			'no_hp'=>$no_hp,
 		);

@@ -5,6 +5,10 @@
 	echo form_input('nama_pelanggan');
 	echo "<br>";
 	echo "<br>";
+	echo form_label('ID : ');
+	echo form_input('id_pelanggan');
+	echo "<br>";
+	echo "<br>";
 	echo form_label('Alamat : ');
 	echo form_input('alamat');
 	echo "<br>";

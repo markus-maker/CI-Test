@@ -10,24 +10,21 @@
 </head>
 <body>
 	<h1>Detail Mahasiswa Prodi TI Semester 1</h1>
-<table>
-		<tr>
-		<td>No</td>
-		<td>Nim</td>
-		<td>Nama</td>
-		<td>Kelas</td>
-		</tr>
 	<?php
+	$template = array(
+		'table_open' => '<table border="collapse"
+		cellpadding="5" cellspacing="0" class="mytable">');
+		$this->table->set_template($template);
+		$this->table->set_heading('No' , 'Nim' , 'Nama' , 'Kelas' , 'Aksi');		
 	$no = 1;
-foreach ($data_mahasiswa as $value) {
-	echo "<tr>";	
-	echo "<td>".$no++."</td>";
-	echo "<td>".$value->nim."</td>";
-	echo "<td>".$value->nama."</td>";
-	echo "<td>".$value->kelas."</td>";
-	echo "</tr>";
+	foreach ($data_mahasiswa as $sf) :
+		$this->table->add_row($no++, $sf->nim, $sf->nama, $sf->kelas, anchor('Mahasiswa/ambil_data_diri/'.
+		$sf->id,'Edit'));
+	endforeach;
+	if($this->session->flashdata('success')){
+		echo $this->session->flashdata('success')."<br><br>";
 	}
+	echo $this->table->generate();
 	 ?>
-</table>
 </body>
 </html>

@@ -14,6 +14,12 @@ class Mahasiswa_model extends CI_Model {
 		$this->db->insert($table, $data);	
 	}
 
+	public function ubah_data($id, $data, $table)
+	{
+		$this->db->where('id', $id);
+		$this->db->update($table, $data);	
+	}
+
 	public function tampil_data_peminjaman()
 	{
 		$this->db->select('judul_buku, penerbit, tgl_pinjam, tgl_kembali, nim, nama, kelas');
@@ -21,5 +27,21 @@ class Mahasiswa_model extends CI_Model {
 		$this->db->join('pinjam_buku' , 'pinjam_buku.id_mahasiswa = mahasiswa.id');
 		$query = $this->db->get();
 		return $query->result();
+	}
+
+	public function get_id($id)
+	{
+		$this->db->from('mahasiswa');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	public function get_nim($nim)
+	{
+		$this->db->from('mahasiswa');
+		$this->db->where('nim', $nim);
+		$query = $this->db->get();
+		return $query->row();
 	}
 }

@@ -4,10 +4,10 @@
 		'table_open' => '<table border="collapse"
 		cellpadding="5" cellspacing="0" class="mytable">');
 		$this->table->set_template($template);
-		$this->table->set_heading('ID' , 'Nama Barang' , 'Jumlah Barang' , 'Harga Barang' , 'Nama Pelanggan' , 'Alamat', 'No Handphone');		
+		$this->table->set_heading('No' , 'ID' , 'Nama Barang' , 'Jumlah Barang' , 'Harga Barang' , 'Nama Pelanggan' , 'ID Pelanggan' , 'Alamat', 'No Handphone');		
 	$no = 1;
 	foreach ($jualan as $sf) :
-		$this->table->add_row($sf->id_barang,$sf->nama_barang,$sf->jumlah_barang,$sf->harga_barang,$sf->nama_pelanggan,$sf->alamat,$sf->no_hp);
+		$this->table->add_row($no++,$sf->id_barang,$sf->nama_barang,$sf->jumlah_barang,$sf->harga_barang,$sf->nama_pelanggan,$sf->id_pelanggan,$sf->alamat,$sf->no_hp);
 	endforeach;
 	echo $this->table->generate();
 ?>

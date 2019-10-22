@@ -14,6 +14,7 @@
 		<tr>
 		<td>No</td>
 		<td>Nama</td>
+		<td>ID</td>
 		<td>Alamat</td>
 		<td>No HP</td>
 		</tr>
@@ -23,6 +24,7 @@ foreach ($data_pelanggan as $value) {
 	echo "<tr>";	
 	echo "<td>".$no++."</td>";
 	echo "<td>".$value->nama_pelanggan."</td>";
+	echo "<td>".$value->id_pelanggan."</td>";
 	echo "<td>".$value->alamat."</td>";
 	echo "<td>".$value->no_hp."</td>";
 	echo "</tr>";

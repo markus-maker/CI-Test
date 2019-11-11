@@ -13,6 +13,7 @@ class Mahasiswa extends CI_Controller {
 		$data['ambil_data_mahasiswa'] = $this->Mahasiswa_model->get_id($id);
 		$this->load->view('ubah_data_mahasiswa', $data);	
 	}
+
 	
 	public function data_diri()
 	{
@@ -25,13 +26,13 @@ class Mahasiswa extends CI_Controller {
 		$this->load->helper('form');	
 		$this->load->view('tambah_data_mahasiswa');	
 	}
-
+		
 	public function kirim_data()
 	{
 		$this->load->helper('url');	
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nim', 'Nim', 'required');
-		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('nim', 'Nim', 'trim|required|is_unique[mahasiswa.nim]');
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required|is_unique[mahasiswa.nama]required');
 
 		if($this->form_validation->run()  != FALSE) {
 
@@ -86,5 +87,34 @@ public function peminjaman()
 	{
 		$data['peminjaman'] = $this->Mahasiswa_model->tampil_data_peminjaman();
 		$this->load->view('peminjaman/peminjaman_buku', $data);	
+	}
+
+public function hapus($id){
+	$where = array('id' => $id);
+	$this->Mahasiswa_model->hapus_data($where,'mahasiswa');
+	redirect('Mahasiswa/data_diri');
+	}
+
+public function aksi_login(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+			'username' => $username,
+			'password' => md5($password)
+			);
+		$cek = $this->Mahasiswa_model->cek_login("admin",$where)->num_rows();
+		if($cek > 0){
+	 
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login"
+				);
+	 
+			$this->session->set_userdata($data_session);
+	 
+			redirect(base_url("admin"));
+		}else{
+			echo "Username dan password salah !";
+		}
 	}
 }

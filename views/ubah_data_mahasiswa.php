@@ -1,4 +1,5 @@
 <?php
+    //print_r ($ambil_data_mahasiswa);
 	echo form_open('Mahasiswa/ubah_data');	
 	echo form_fieldset('Data Diri Mahasiswa');
 	$id = array('id'=>$ambil_data_mahasiswa->id);

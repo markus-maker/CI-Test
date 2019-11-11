@@ -3,10 +3,12 @@
 	echo form_fieldset('Data Diri Mahasiswa');
 	echo form_label('Nim Mahasiswa : ');
 	echo form_input('nim');
+	echo form_error('nim');
 	echo "<br>";
 	echo "<br>";
 	echo form_label('Nama Mahasiswa : ');
 	echo form_input('nama');
+	echo form_error('nama');
 	echo "<br>";
 	echo "<br>";
 	$options = array(

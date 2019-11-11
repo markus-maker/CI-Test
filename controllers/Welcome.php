@@ -21,21 +21,21 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		echo "<h6> copyright by : Markus Haryadi W == UMPWR 2019</h6> "."<br/>";
-		echo "<b> Jadwal Mata Kuliah Pemrograman Framework </b> "."<br/>";
-		$hari = array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat','Sabtu');
-		for($i=0;$i<count($hari);$i++){
-			if($hari[$i] == "Rabu"){
-				echo " <br/> 1. Teori Pemrograman Web Framework Pada Hari ".$hari[$i];
-			}
-		}
-		for($j=0;$j<count($hari);$j++){
-			if($hari[$j] == "Kamis"){
-				echo " <br/> 2. Praktikum Pemrograman Web Framework Pada Hari ".$hari[$j];
-			}
-		}
-		echo "<br/> <br/>";
-		$this->load->view('table');
+		//echo "<h6> copyright by : Markus Haryadi W == UMPWR 2019</h6> "."<br/>";
+		//echo "<b> Jadwal Mata Kuliah Pemrograman Framework </b> "."<br/>";
+		//$hari = array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat','Sabtu');
+		//for($i=0;$i<count($hari);$i++){
+		//	if($hari[$i] == "Rabu"){
+		//		echo " <br/> 1. Teori Pemrograman Web Framework Pada Hari ".$hari[$i];
+		//	}
+		//}
+		//for($j=0;$j<count($hari);$j++){
+		//	if($hari[$j] == "Kamis"){
+		//		echo " <br/> 2. Praktikum Pemrograman Web Framework Pada Hari ".$hari[$j];
+		//	}
+		//}
+		//echo "<br/> <br/>";
+		$this->load->view('login');
 		
 	}
 }
